@@ -15,8 +15,16 @@ let openKto = function (kto: Konto) {
     }
 }
 
-openKto({ 
-    type: "Giro", 
-    owner: { name: "Martin", age: 45 }, 
-    saldo: 1000, 
-    comments: ["Kommentar1"] });
+openKto({
+    type: "Giro",
+    owner: { name: "Martin", age: 45 },
+    saldo: 1000,
+    comments: ["Kommentar1"]
+});
+
+let kto: Konto = {
+    type: "Giro",
+    owner: { name: "Martin", age: 45 },
+    saldo: 1000,
+    comments: ["Kommentar1"]
+}
