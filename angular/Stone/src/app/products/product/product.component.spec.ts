@@ -8,9 +8,9 @@ describe('ProductComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductComponent ]
+      declarations: [ProductComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +21,12 @@ describe('ProductComponent', () => {
 
   it('should be created', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should add Price', () => {
+    component = new ProductComponent();
+    const oldPrice = component.product.price;
+    component.raisePrice();
+    expect(oldPrice + 5).toBe(component.product.price);
   });
 });
