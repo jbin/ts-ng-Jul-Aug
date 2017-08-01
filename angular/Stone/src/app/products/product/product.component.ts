@@ -8,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  product = new ProductModel(1, 'Denkmalstein', 12445, 126);
+  product: ProductModel = {
+    'id': 12,
+    'name': 'Granitstein Gravo',
+    'price': 134.56,
+    'weight': 12
+  };
 
   constructor() { }
 
