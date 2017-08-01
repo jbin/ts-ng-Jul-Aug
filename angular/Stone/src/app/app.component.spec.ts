@@ -1,3 +1,4 @@
+import { ProductsModule } from './products/products.module';
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [ProductsModule]
     }).compileComponents();
   }));
 
