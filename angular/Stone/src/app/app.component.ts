@@ -1,3 +1,4 @@
+import { ProductModel } from './products/product-model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stn';
+  prd: ProductModel = new ProductModel(0, 'Test', 123, 321);
 }

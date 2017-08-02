@@ -1,5 +1,5 @@
 import { ProductModel } from './../product-model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'stn-product',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  product: ProductModel = {
+  @Input('data') product: ProductModel = {
     'id': 12,
     'name': 'Granitstein Gravo',
     'price': 134.56,
