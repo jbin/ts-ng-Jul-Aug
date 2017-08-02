@@ -1,7 +1,12 @@
 <h4># {{product.id}} - {{product.name}}</h4>
 <p>Preis: <span id="price">{{product.price}}</span></p>
 <p>Gewicht: {{product.weight}}</p>
+
+<button (click)="isVisible = !isVisible">Toggle</button>
+<div *ngIf="isVisible">
 <p>Neuer Preis: <input type="text" #price ></p>
 <button (click)="changePrice(price)">Preis ändern</button>
+</div>
+
 
 {{isAvailable}}

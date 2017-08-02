@@ -17,7 +17,8 @@ export class ProductComponent implements OnInit {
   };
 
   @Input() isAvailable = true;
-
+  isVisible = false;
+  
   constructor() { }
 
   ngOnInit() {

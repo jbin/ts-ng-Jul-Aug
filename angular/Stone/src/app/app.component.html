@@ -2,7 +2,7 @@
   <h2>
     Welcome to {{title}}!!
   </h2>
- 
-<stn-product [product]="prd" isAvailable=false></stn-product>
-<stn-product (priceChange)="onPriceChange($event)"></stn-product>
-<stn-product></stn-product>
+<div *ngFor="let prod of productList">
+  <stn-product [product]="prod"></stn-product>
+</div> 
+
