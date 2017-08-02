@@ -3,6 +3,6 @@
     Welcome to {{title}}!!
   </h2>
  
-<stn-product [data]="prd"></stn-product>
-
+<stn-product [product]="prd" isAvailable=false></stn-product>
+<stn-product (priceChange)="onPriceChange($event)"></stn-product>
 <stn-product></stn-product>

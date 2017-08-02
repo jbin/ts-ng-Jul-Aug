@@ -1,5 +1,5 @@
 import { ProductModel } from './../product-model';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'stn-product',
@@ -8,12 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  @Input('data') product: ProductModel = {
+  @Output() priceChange = new EventEmitter<number>();
+  @Input() product: ProductModel = {
     'id': 12,
     'name': 'Granitstein Gravo',
     'price': 134.56,
     'weight': 12
   };
+
+  @Input() isAvailable = true;
 
   constructor() { }
 
@@ -22,6 +25,7 @@ export class ProductComponent implements OnInit {
 
   raisePrice() {
     this.product.price += 5;
+    this.priceChange.emit(this.product.price);
   }
 
 }

@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stn';
+
   prd: ProductModel = new ProductModel(0, 'Test', 123, 321);
+
+  onPriceChange(price: number) {
+    alert(price);
+  }
 }
