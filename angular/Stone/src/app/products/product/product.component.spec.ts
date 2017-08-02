@@ -1,6 +1,8 @@
+import { By } from '@angular/platform-browser';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductComponent } from './product.component';
+
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
@@ -24,9 +26,13 @@ describe('ProductComponent', () => {
   });
 
   it('should add Price', () => {
-    component = new ProductComponent();
-    const oldPrice = component.product.price;
-    component.raisePrice();
-    expect(oldPrice + 5).toBe(component.product.price);
+    const btnElem = fixture.debugElement.query(By.css('button'));
+    const priceElem = fixture.debugElement.query(By.css('#price'));
+    const oldprice = component.product.price;
+    btnElem.nativeElement.click();
+    fixture.detectChanges();
+    console.log(priceElem.nativeElement.textContent);
+
+    expect(+(priceElem.nativeElement.textContent)).toBeGreaterThan(oldprice);
   });
 });

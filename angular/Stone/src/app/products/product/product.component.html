@@ -1,6 +1,7 @@
 <h4># {{product.id}} - {{product.name}}</h4>
-<p>Preis: {{product.price}}</p>
+<p>Preis: <span id="price">{{product.price}}</span></p>
 <p>Gewicht: {{product.weight}}</p>
-<button (click)="raisePrice()">Preiserhöhung!!</button>
+<p>Neuer Preis: <input type="text" #price ></p>
+<button (click)="changePrice(price)">Preis ändern</button>
 
 {{isAvailable}}

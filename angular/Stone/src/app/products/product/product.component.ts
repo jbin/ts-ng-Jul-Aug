@@ -28,4 +28,9 @@ export class ProductComponent implements OnInit {
     this.priceChange.emit(this.product.price);
   }
 
+  changePrice(price: any) {
+    this.product.price = price.value;
+    this.priceChange.emit(this.product.price);
+  }
+
 }
