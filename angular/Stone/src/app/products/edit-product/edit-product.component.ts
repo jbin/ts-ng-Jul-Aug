@@ -1,4 +1,6 @@
+import { ProductModel } from './../product-model';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'stn-edit-product',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProductComponent implements OnInit {
 
-  constructor() { }
+  productForm: FormGroup;
+  id = new FormControl();
+  name = new FormControl();
+  price = new FormControl();
+  weight = new FormControl();
+
+  product: ProductModel;
+
+  constructor(private builder: FormBuilder) {
+    this.productForm = builder.group({
+      id: this.id,
+      name: this.name,
+      price: this.price,
+      weight: this.weight
+    });
+  }
 
   ngOnInit() {
+  }
+
+  save() {
+    this.product = this.productForm.value;
+
   }
 
 }

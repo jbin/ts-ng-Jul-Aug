@@ -1,19 +1,22 @@
-<form>
+<form [formGroup]="productForm">
     <md-input-container>
-        <input mdInput name="id" type="text" placeholder="id">
+
+      <input mdInput name="id" type="number" placeholder="id" [formControl]="id">
         <md-hint></md-hint>
     </md-input-container>
     <md-input-container>
-        <input mdInput name="name" type="text" placeholder="Name">
+        <input mdInput name="name" type="text" placeholder="Name" [formControl]="name">
         <md-hint></md-hint>
     </md-input-container>
     <md-input-container>
-        <input mdInput name="price" type="text" placeholder="Preis">
+        <input mdInput name="price" type="number" placeholder="Preis" [formControl]="price">
         <md-hint></md-hint>
     </md-input-container>
     <md-input-container>
-        <input mdInput name="weight" type="text" placeholder="Gewicht">
+        <input mdInput name="weight" type="number" placeholder="Gewicht" [formControl]="weight">
         <md-hint></md-hint>
     </md-input-container>
-    <button color="accent" md-button (click)="save(productForm.value)">speichern</button>
+    <button color="accent" md-button (click)="save()">speichern</button>
 </form>
+
+{{product | json}}
