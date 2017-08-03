@@ -1,12 +1,11 @@
-
-
 <md-toolbar color="primary">
   <span>StoneS</span>
+    <a [routerLink]="['/products']" md-button>
+     Produktliste
+  </a>
+  <a [routerLink]="['/products/new']" md-button>
+     Neues Produkt
+  </a>
 </md-toolbar>
-<stn-edit-product></stn-edit-product>
-<div *ngFor="let prod of productList | slice:-3; let i = index">
-  {{i}} <br>
-  <stn-product [product]="prod"></stn-product>
-</div> 
-{{productList | json}}
 
+<router-outlet></router-outlet>

@@ -1,3 +1,4 @@
+import { ProductService } from './../product.service';
 import { ProductModel } from './../product-model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
@@ -17,7 +18,7 @@ export class EditProductComponent implements OnInit {
 
   product: ProductModel;
 
-  constructor(private builder: FormBuilder) {
+  constructor(private builder: FormBuilder, private pService: ProductService) {
     this.productForm = builder.group({
       id: this.id,
       name: this.name,
@@ -31,7 +32,7 @@ export class EditProductComponent implements OnInit {
 
   save() {
     this.product = this.productForm.value;
-
+    this.pService.addProduct(this.product);
   }
 
 }
