@@ -1,8 +1,12 @@
-<!--The content below is only a placeholder and can be replaced.-->
-  <h2>
-    Welcome to {{title}}!!
-  </h2>
-<div *ngFor="let prod of productList">
+
+
+<md-toolbar color="primary">
+  <span>StoneS</span>
+</md-toolbar>
+<stn-edit-product></stn-edit-product>
+<div *ngFor="let prod of productList | slice:-3; let i = index">
+  {{i}} <br>
   <stn-product [product]="prod"></stn-product>
 </div> 
+{{productList | json}}
 
